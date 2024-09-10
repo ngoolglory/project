@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-csv_file_path = 'data/streamlit_data.csv'
+csv_file_path = './data/streamlit_data.csv'
 
 @st.cache_data
 def load_data(file_path):
@@ -44,7 +44,7 @@ def plot_predictions_over_time(df, vegetables, rolling_mean_window):
 
 df = preprocess_data(df)
 
-metric_file_path = 'data/metric_summary.csv'
+metric_file_path = './data/metric_summary.csv'
 
 metric_summary = pd.read_csv(metric_file_path)
 metric_summary.set_index('product', inplace=True)
