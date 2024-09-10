@@ -2,15 +2,12 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import os
-
-cwd = os.getcwd()
 
 @st.cache_data
 def load_data(file_path):
     return pd.read_csv(file_path)
 
-df = load_data(cwd + '/data/streamlit_data.csv')
+df = load_data('streamlit_data.csv')
 
 if 'date' in df.columns:
     df['date'] = pd.to_datetime(df['date'])
@@ -45,7 +42,7 @@ def plot_predictions_over_time(df, vegetables, rolling_mean_window):
 
 df = preprocess_data(df)
 
-metric_summary = pd.read_csv(cwd + '/data/metric_summary.csv')
+metric_summary = pd.read_csv('metric_summary.csv')
 metric_summary.set_index('product', inplace=True)
 
 st.title('🍇농산물 가격 예측 대시보드🥭')
