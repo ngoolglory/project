@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 #     return pd.read_csv(file_path)
 
 #df = load_data('streamlit_data.csv')
-df = pd.read_csv("streamlit_data.csv")
+df = pd.read_csv("/mount/src/project/agricultural_price_prediction_project/streamlit_data.csv")
 
 if 'date' in df.columns:
     df['date'] = pd.to_datetime(df['date'])
@@ -43,7 +43,7 @@ def plot_predictions_over_time(df, vegetables, rolling_mean_window):
 
 df = preprocess_data(df)
 
-metric_summary = pd.read_csv("metric_summary.csv")
+metric_summary = pd.read_csv("/mount/src/project/agricultural_price_prediction_project/metric_summary.csv")
 metric_summary.set_index('product', inplace=True)
 
 st.title('🍇농산물 가격 예측 대시보드🥭')
