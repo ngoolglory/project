@@ -3,12 +3,11 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# @st.cache_data
-# def load_data(file_path):
-#     return pd.read_csv(file_path)
+@st.cache_data
+def load_data(file_path):
+    return pd.read_csv(file_path)
 
-#df = load_data('streamlit_data.csv')
-df = pd.read_csv("/mount/src/project/agricultural_price_prediction_project/streamlit_data.csv")
+df = load_data('/mount/src/project/agricultural_price_prediction_project/streamlit_data.csv')
 
 if 'date' in df.columns:
     df['date'] = pd.to_datetime(df['date'])
